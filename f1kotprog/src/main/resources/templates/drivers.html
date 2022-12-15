@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Pilóták</title>
+</head>
+<body>
+<h1>Pilóták</h1>
+<a th:href="@{/addnewdriver}">Pilóta hozzáadása</a>
+
+<table border="2" width="70%" cellpadding="2">
+    <tr>
+        <th>Pilóta Id</th>
+        <th>Rajtszám</th>
+        <th>Keresztnév</th>
+        <th>Vezetéknékv</th>
+        <th>Születési dátum</th>
+        <th>Nemzetiség</th>
+        <th>Szerkesztés</th>
+        <th>Törlés</th>
+    </tr>
+    <tr th:each="driver: ${drivers}">
+        <td th:text="${driver.driverId}"></td>
+        <td th:text="${driver.number}"></td>
+        <td th:text="${driver.forname}"></td>
+        <td th:text="${driver.surname}"></td>
+        <td th:text="${driver.dob}"></td>
+        <td th:text="${driver.nationality}"></td>
+        <td><a th:href="@{/editdriver(driverId=${driver.driverId})}">Szerkesztés</a></td>
+        <td><a th:href="@{/deletedriver(driverId=${driver.driverId})}">Törlés</a></td>
+    </tr>
+</table>
+</body>
+</html>

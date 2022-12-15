@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<script type="text/javascript">
+  function handleSelect(elm)
+  {
+     window.location = elm.value;
+  }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+
+</head>
+<body>
+<h1>Menü</h1>
+<a th:href="@{/drivers}">Pilóták</a>
+<a th:href="@{/circuits}">Pályák</a>
+<a th:href="@{/races}">Futamok</a>
+<a th:href="@{/results}">Eredmények</a>
+
+<select onchange="javascript:handleSelect(this)">
+    <option>Válassz lekérdezést</option>
+    <option value="first">Az a pilóta, aki a legtöbb futamot nyerte a 3. rajtrácsról indulva</option>
+    <option value="second">Azok a pályák, ahol összesen eddig 4 futamot rendeztek</option>
+    <option value="third">Azok a pilóták, akik részt vettek az Ausztrál Nagydíjon valaha</option>
+</select>
+</body>
+</html>

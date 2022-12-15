@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Pályák</title>
+</head>
+<body>
+<h1>Pályák</h1>
+<a th:href="@{/addnewcircuit}">Pálya hozzáadása</a>
+
+<table border="2" width="70%" cellpadding="2">
+    <tr>
+        <th>Pálya Id</th>
+        <th>Név</th>
+        <th>Helyszín</th>
+        <th>Ország</th>
+        <th>Szerkesztés</th>
+        <th>Törlés</th>
+    </tr>
+    <tr th:each="circuit: ${circuits}">
+        <td th:text="${circuit.circuitId}"></td>
+        <td th:text="${circuit.name}"></td>
+        <td th:text="${circuit.location}"></td>
+        <td th:text="${circuit.country}"></td>
+        <td><a th:href="@{/editcircuit(circuitId=${circuit.circuitId})}">Szerkesztés</a></td>
+        <td><a th:href="@{/deletecircuit(circuitId=${circuit.circuitId})}">Törlés</a></td>
+    </tr>
+</table>
+</body>
+</html>

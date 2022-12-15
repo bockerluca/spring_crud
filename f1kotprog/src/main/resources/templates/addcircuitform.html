@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Pálya hozzáadása</title>
+</head>
+<body>
+<h1>Pálya hozzáadása</h1>
+<form action="#" th:action="@{circuits/addnewcircuit}" th:object="${circuit}" method="post">
+    <p hidden>ID: <input type="number" th:field="${circuit.circuitId}" /></p>
+    <p>Név: <input type="text" th:field="${circuit.name}" /></p>
+    <p>Helyszín: <input type="text" th:field="${circuit.location}" /></p>
+    <p>Ország: <input type="text" th:field="${circuit.country}" /></p>
+    <p><input type="submit" value="Mentés" /> <input type="reset" value="Visszaállítás" />
+</form>
+</body>
+</html>

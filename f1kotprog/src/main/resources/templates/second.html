@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Azok a pályák, ahol összesen eddig 4 futamot rendeztek</title>
+</head>
+<h1>Azok a pályák, ahol összesen eddig 4 futamot rendeztek</h1>
+    <table border="2" width="30%" cellpadding="2">
+        <tr>
+            <th>Név</th>
+            <th>Helyzín</th>
+            <th>Ország</th>
+            <th>Futamok száma</th>
+
+        </tr>
+        <tr th:each="second: ${second}">
+            <td th:text="${second.name}"></td>
+            <td th:text="${second.location}"></td>
+            <td th:text="${second.country}"></td>
+            <td th:text="${second.countOfRaces}"></td>
+
+        </tr>
+    </table>
+
+</body>
+</html>

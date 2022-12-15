@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Azok a pilóták, akik részt vettek az Ausztrál Nagydíjjon valaha</title>
+</head>
+<body>
+<h1>Azok a pilóták, akik részt vettek az Ausztrál Nagydíjon valaha</h1>
+<table border="2" width="30%" cellpadding="2">
+    <tr>
+        <th>Keresztnév</th>
+        <th>Vezetéknév</th>
+
+    </tr>
+    <tr th:each="third: ${third}">
+        <td th:text="${third.forname}"></td>
+        <td th:text="${third.surname}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

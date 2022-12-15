@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Pilóta hozzáadása</title>
+</head>
+<body>
+<h1>Pilóta hozzáadása</h1>
+<form action="#" th:action="@{drivers/addnewdriver}" th:object="${driver}" method="post">
+    <p hidden>ID: <input type="number" th:field="${driver.driverId}" /></p>
+    <p>Rajtszám: <input type="text" th:field="${driver.number}" /></p>
+    <p>Keresztnév: <input type="text" th:field="${driver.forname}" /></p>
+    <p>Vezetéknév: <input type="text" th:field="${driver.surname}" /></p>
+    <p>Születési dáum: <input type="text" th:field="${driver.dob}" /></p>
+    <p>Nemzetiség: <input type="text" th:field="${driver.nationality}" /></p>
+    <p><input type="submit" value="Mentés" /> <input type="reset" value="Visszaállítás" />
+</form>
+</body>
+</html>

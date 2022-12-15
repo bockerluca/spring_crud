@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Eredmények</title>
+</head>
+<body>
+<h1>Eredmények</h1>
+
+<table border="2" width="70%" cellpadding="2">
+    <tr>
+        <th>Eredmény Id</th>
+        <th>Futam</th>
+        <th>Pilóta</th>
+        <th>Rajtszám</th>
+        <th>Rajtrács</th>
+        <th>Végeredmény</th>
+        <th>Pontok</th>
+        <th>Törlés</th>
+    </tr>
+    <tr th:each="result: ${results}">
+        <td th:text="${result.resultId}"></td>
+        <td th:text="${result.raceId}"></td>
+        <td th:text="${result.driverId}"></td>
+        <td th:text="${result.number}"></td>
+        <td th:text="${result.grid}"></td>
+        <td th:text="${result.positionOrder}"></td>
+        <td th:text="${result.points}"></td>
+        <td><a th:href="@{/deleteresult(resultId=${result.resultId})}">Törlés</a></td>
+    </tr>
+</table>
+</body>
+</html>

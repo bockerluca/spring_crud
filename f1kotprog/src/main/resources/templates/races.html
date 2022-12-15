@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Futamok</title>
+</head>
+<body>
+<h1>Futamok</h1>
+
+<table border="2" width="70%" cellpadding="2">
+    <tr>
+        <th>Futam Id</th>
+        <th>Év</th>
+        <th>Kör</th>
+        <th>Pálya</th>
+        <th>Név</th>
+        <th>Dátum</th>
+    </tr>
+    <tr th:each="race: ${races}">
+        <td th:text="${race.raceId}"></td>
+        <td th:text="${race.year}"></td>
+        <td th:text="${race.round}"></td>
+        <td th:text="${race.circuitId}"></td>
+        <td th:text="${race.name}"></td>
+        <td th:text="${race.date}"></td>
+    </tr>
+</table>
+</body>
+</html>

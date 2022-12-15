@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Az a pilóta, aki a legtöbb futamot nyerte a 3. rajtrácsról indulva</title>
+</head>
+<body>
+<h1>Az a pilóta, aki a legtöbb futamot nyerte a 3. rajtrácsról indulva</h1>
+<table border="2" width="30%" cellpadding="2">
+    <tr>
+        <th>Keresztnév</th>
+        <th>Vezetéknév</th>
+        <th>Legtöbb győzelem P3-ból indulva</th>
+    </tr>
+    <tr th:each="first: ${first}">
+        <td th:text="${first.forname}"></td>
+        <td th:text="${first.surname}"></td>
+        <td th:text="${first.mostP3Win}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
